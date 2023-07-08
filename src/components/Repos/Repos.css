@@ -1,0 +1,79 @@
+.link-repos {
+    text-decoration: none;
+}
+
+.box__content-repos {
+    width: 100%;
+    height: 100%;
+    margin: 40px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: wrap;
+    overflow-y: scroll;
+}
+
+.cnt__content-repos {
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+  
+.cnt__content-repos::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.box__item-repos {
+    width: 200px;
+    height: 65px;
+    border: 1px solid #1976d2;
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: #e7f0f8;
+}
+
+.tp__private-repos {
+    width: 40px;
+    height: 17px;
+    padding: 1px 3px;
+    border-radius: 100px;
+    text-align: center;
+    background-color: rgba(52, 85, 102, 0.6);
+}
+
+.box__name-repos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.box__desc-repos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.box__created-repos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 10px;
+    height: 20px;
+}
+
+.tp__repos {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+  
+.tp__repos::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

@@ -1,0 +1,14 @@
+.app__navbar-nb {
+    height: 6%;
+}
+
+.app__toolbar-nb {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.app__indicator-nb {
+    margin-bottom: 6px !important;
+}
