@@ -1,0 +1,36 @@
+.box__content-ui {
+    width: auto;
+    height: auto;
+    padding: 40px;
+    border: 1px solid #1976d2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tp__header-ui {
+    width: 94%;
+    padding: 5px;
+    text-align: center;
+    color: #1976d2;
+}
+
+.box__rows-ui {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+}
+
+.tp__label-ui {
+    color: #1976d2;
+}
+
+.tp__value-ui {
+    margin-left: 10px !important;
+}
+
+.btn__deletedata-ui {
+    margin-top: 15px !important;
+}
