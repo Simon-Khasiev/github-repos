@@ -1,0 +1,27 @@
+.box__content-st{
+    width: 100%;
+    height: auto;
+}
+
+.box__item-st{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #1976d2;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.box__tree-st {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #1976d2;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: rgb(184, 214, 238);
+}

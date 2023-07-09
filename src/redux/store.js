@@ -1,3 +1,5 @@
+import currentBranchReducer from './slices/currentBranchSlice'
+import branchesReducer from './slices/branchesSlice'
 import reposReducer from './slices/userReposSlice'
 import { configureStore } from '@reduxjs/toolkit'
 import oneRepoReducer from'./slices/oneRepoSlice'
@@ -8,6 +10,8 @@ export const store = configureStore({
         user: userReducer,
         userRepos: reposReducer,
         repo: oneRepoReducer,
+        branches: branchesReducer,
+        curBranch: currentBranchReducer,
     },
 
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
