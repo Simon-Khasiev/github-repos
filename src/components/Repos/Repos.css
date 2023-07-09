@@ -26,14 +26,15 @@
 .box__item-repos {
     width: 200px;
     height: 65px;
-    border: 1px solid #1976d2;
+    border: 1px solid rgb(27, 120, 214, 0.1);
     padding: 10px;
     margin-bottom: 5px;
     margin-right: 5px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    background-color: #e7f0f8;
+    background-color: rgb(27, 120, 214, 0.3);
+    color: rgb(252, 252, 252);
 }
 
 .tp__private-repos {
@@ -42,7 +43,7 @@
     padding: 1px 3px;
     border-radius: 100px;
     text-align: center;
-    background-color: rgba(52, 85, 102, 0.6);
+    background-color: rgba(52, 85, 102, 0.2);
 }
 
 .box__name-repos {

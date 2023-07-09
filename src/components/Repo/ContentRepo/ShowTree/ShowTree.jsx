@@ -20,7 +20,6 @@ export const ShowTree = ({tree, ml}) => {
             .then(res => setState(prev => ({...prev, [path]: res.data.tree})))
             .then(setShow(prev => ({...prev, [path]: path})))
         }
-        console.log(state);
     }
 
     return (
@@ -29,10 +28,10 @@ export const ShowTree = ({tree, ml}) => {
                 if(el.type === 'blob'){
                     return (
                         <Box key={el.url} className="box__item-st">
-                            <Typography className="tp__itemPath-st">
+                            <Typography fontSize={'14px'} className="tp__itemPath-st">
                                 {el.path}
                             </Typography>
-                            <Typography className="tp__size-st">
+                            <Typography fontSize={'11px'} className="tp__size-st">
                                 {`size: ${el.size}`}
                             </Typography>
                         </Box>
@@ -44,7 +43,8 @@ export const ShowTree = ({tree, ml}) => {
                                 <Typography className="tp__itemPath-st">{el.path}</Typography>
                                 <Typography>{show[el.path] === el.path ? '↑' :'↓'}</Typography>
                             </Box>
-                            { show[el.path] === el.path && !!state[el.path]?.length && 
+                            { 
+                                show[el.path] === el.path && !!state[el.path]?.length && 
                                 <ShowTree tree={state[el.path]} ml={ml + 10}/>
                             }
                         </Box>

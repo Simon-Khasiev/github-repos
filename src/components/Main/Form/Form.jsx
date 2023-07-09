@@ -21,6 +21,9 @@ export const Form = () => {
             navigate('/repos')
         } else {
             setIsEmptyInputs(true)
+            setTimeout(() => {
+                setIsEmptyInputs(false)
+            }, 1000)
         }
     }
     return (
@@ -41,6 +44,13 @@ export const Form = () => {
                 value={inputState.token} 
                 onChange={(e) => changeHandler(e)}
             />
+            <Typography 
+                color='red'
+                className="tp__warning-form"
+                sx={isEmptyInputs ? {opacity: '1'} : {opacity: '0'}}
+            >
+                FILL ALL INPUT
+            </Typography>
             <Button 
                 type='button' 
                 variant="contained"
@@ -49,13 +59,6 @@ export const Form = () => {
             >
                 save
             </Button>
-            <Typography 
-                color='red'
-                className="tp__warning-form"
-                sx={isEmptyInputs ? {opacity: '1'} : {opacity: '0'}}
-            >
-                FILL ALL INPUT
-            </Typography>
         </Box>
     )
 }

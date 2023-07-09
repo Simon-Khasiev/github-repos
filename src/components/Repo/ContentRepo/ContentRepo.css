@@ -1,0 +1,12 @@
+.box__showtree-cr {
+    height: 650px;
+    width: auto;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.box__showtree-cr::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

@@ -4,6 +4,7 @@ import { Select, MenuItem, InputLabel, FormControl, Box } from "@mui/material"
 import { useEffect } from "react"
 import { Octokit } from "octokit"
 import { deleteTree, setBranchUrl } from "../../../redux/slices/currentBranchSlice"
+import './SelectBranches.css'
 
 
 export const SelectBranches = ({nameRepo}) => {
@@ -33,8 +34,8 @@ export const SelectBranches = ({nameRepo}) => {
         dispatch(deleteTree())
     }
     return (
-        <Box>
-            <FormControl sx={{ minWidth: 120 }}>
+        <Box className="box__content-sb">
+            <FormControl sx={{ minWidth: 200 }}>
                 <InputLabel id="select-label">BRANCH</InputLabel>
                 <Select
                     defaultValue=""
@@ -43,7 +44,6 @@ export const SelectBranches = ({nameRepo}) => {
                     labelId="select-label"
                     label="BRANCH"
                     onChange={(e) => handleChange(e)}
-                    autoWidth
                 >
                     {branches?.map(branch => 
                         <MenuItem key={branch.name} value={branch.commit.url}>

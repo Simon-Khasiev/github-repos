@@ -1,8 +1,10 @@
+import { deleteTree, setBranchUrl } from "../../redux/slices/currentBranchSlice"
 import { SelectBranches } from "./SelectBranches/SelectBranches"
+import { setBranches } from "../../redux/slices/branchesSlice"
 import { setRepo } from "../../redux/slices/oneRepoSlice"
 import { ContentRepo } from "./ContentRepo/ContentRepo"
 import { useDispatch, useSelector } from "react-redux"
-import { Box, Typography } from "@mui/material"
+import { Box, Button, Link, Typography } from "@mui/material"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { Octokit } from "octokit"
@@ -14,6 +16,15 @@ export const Repo = () => {
     const {username, token} = useSelector(store => store.user)
     const repo = useSelector(store => store.repo.repo)
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        return (() => {
+            dispatch(deleteTree([]))
+            dispatch(setRepo(null))
+            dispatch(setBranches([]))
+            dispatch(setBranchUrl(''))
+        })
+    }, [dispatch])
 
     useEffect(() => {
         if(token) {
@@ -42,9 +53,15 @@ export const Repo = () => {
         <>
             { repo ? 
                 <Box className="box__content-repo">
-                    <Typography className="tp__name-repo" color='#1976d2'>
-                        {repo?.name?.toUpperCase()}
-                    </Typography>
+                    <Box className="tp__name-repo" color='#1976d2'>
+                        <Typography>{repo?.name?.toUpperCase()}</Typography>
+                        <Link className="link__repo" href={repo?.html_url} target="blanck">
+                            <Button>
+                                <Typography fontSize={'12px'} color='black'>{repo?.full_name}</Typography>
+                            </Button>
+                        </Link>
+                        <Typography fontSize={'10px'}>{`last changes: ${repo?.updated_at?.slice(0, 10)}`}</Typography>
+                    </Box>
                     <SelectBranches nameRepo={nameRepo}/>
                     <ContentRepo nameRepo={nameRepo}/>
                 </Box> 

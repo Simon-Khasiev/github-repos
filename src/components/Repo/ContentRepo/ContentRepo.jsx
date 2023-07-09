@@ -3,6 +3,8 @@ import { useEffect} from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setTree } from "../../../redux/slices/currentBranchSlice"
 import { ShowTree } from "./ShowTree/ShowTree"
+import './ContentRepo.css'
+import { Box } from "@mui/material"
 
 export const ContentRepo = ({nameRepo}) => {
     const { username, token } = useSelector(store => store.user)
@@ -28,10 +30,10 @@ export const ContentRepo = ({nameRepo}) => {
     },[dispatch, nameRepo, token, username, url])
 
     return(
-        <>
+        <Box className="box__showtree-cr">
             {
                 tree.length > 0 && <ShowTree tree={tree} ml={10}/>
             }
-        </>
+        </Box>
     )
 }

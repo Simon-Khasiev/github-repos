@@ -2,6 +2,10 @@ import { Box, Button, Typography } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
 import './UserInfo.css'
 import { deleteUser } from "../../../redux/slices/userSlice"
+import { setBranches } from "../../../redux/slices/branchesSlice"
+import { setRepo } from "../../../redux/slices/oneRepoSlice"
+import { deleteTree, setBranchUrl } from "../../../redux/slices/currentBranchSlice"
+import { setRepos } from "../../../redux/slices/userReposSlice"
 
 export const UserInfo = () => {
     const {username, token} = useSelector(store => store.user)
@@ -10,6 +14,11 @@ export const UserInfo = () => {
 
     const deleteHandler = () => {
         dispatch(deleteUser())
+        dispatch(deleteTree([]))
+        dispatch(setRepos([]))
+        dispatch(setRepo(null))
+        dispatch(setBranches([]))
+        dispatch(setBranchUrl(''))
     }
 
     return (
